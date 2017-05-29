@@ -1,6 +1,6 @@
 {
   "name": "generator-hexin-node",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "HEXIN Node Generator",
   "main": "src/index.js",
   "scripts": {
