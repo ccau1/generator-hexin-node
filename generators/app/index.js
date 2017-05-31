@@ -361,6 +361,11 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
+      this.templatePath('app/models/LocalizedString.js'),
+      this.destinationPath('app/models/LocalizedString.js'),
+      this.props
+    );
+    this.fs.copyTpl(
       this.templatePath('app/models/User.js'),
       this.destinationPath('app/models/User.js'),
       this.props
@@ -403,7 +408,9 @@ module.exports = class extends Generator {
 
   install() {
     // Where installations are run (npm, bower)
-    this.installDependencies();
+    this.installDependencies({
+      bower: false
+    });
   }
 
   end() {

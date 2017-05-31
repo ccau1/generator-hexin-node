@@ -1,7 +1,7 @@
 {
   "name": "<%= name %>",
   "description": "<%= name %>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "server.js",
   "scripts": {
     "start": "node server",
@@ -21,9 +21,6 @@
     "url": "https://github.com/ccau1/hexin.git"
   },
   "keywords": [
-    "api",
-    "logistics",
-    "wtt"
   ],
   "author": "<%= name %> <support@<%= name %>.com>",
   "dependencies": {
