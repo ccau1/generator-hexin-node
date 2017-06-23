@@ -37,7 +37,7 @@ UserSchema.pre('save', function (callback) {
       return callback(saltErrors);
     }
 
-    return bCrypt.hash(currentUser.password, salt, function (hashErrors, hash) {
+    return bCrypt.hash(currentUser.password, salt, null, function (hashErrors, hash) {
       if (hashErrors) {
         return callback(hashErrors);
       }
