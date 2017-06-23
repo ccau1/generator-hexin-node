@@ -5,7 +5,7 @@ const mongoose = require('hexin-core/helpers/Database').getConnection();
 const Schema = mongoose.Schema;
 const SchemaTypes = mongoose.Schema.Types;
 
-const bCrypt = require('bcrypt');
+const bCrypt = require('bcrypt-nodejs');
 // const {generateToken} = require('hexin-core/helpers/Token');
 
 const UserSchema = new Schema({
