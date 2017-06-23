@@ -200,6 +200,11 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
+      this.templatePath('package-lock.json'),
+      this.destinationPath('package-lock.json'),
+      this.props
+    );
+    this.fs.copyTpl(
       this.templatePath('.yo-rc.json'),
       this.destinationPath('.yo-rc.json'),
       this.props
@@ -286,23 +291,8 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('app_start/BodyParserConfig.js'),
-      this.destinationPath('app_start/BodyParserConfig.js'),
-      this.props
-    );
-    this.fs.copyTpl(
       this.templatePath('app_start/ControllersConfig.js'),
       this.destinationPath('app_start/ControllersConfig.js'),
-      this.props
-    );
-    this.fs.copyTpl(
-      this.templatePath('app_start/DbConfig.js'),
-      this.destinationPath('app_start/DbConfig.js'),
-      this.props
-    );
-    this.fs.copyTpl(
-      this.templatePath('app_start/ErrorsConfig.js'),
-      this.destinationPath('app_start/ErrorsConfig.js'),
       this.props
     );
     this.fs.copyTpl(
@@ -321,11 +311,6 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('app_start/LoggerConfig.js'),
-      this.destinationPath('app_start/LoggerConfig.js'),
-      this.props
-    );
-    this.fs.copyTpl(
       this.templatePath('app_start/PublicPathConfig.js'),
       this.destinationPath('app_start/PublicPathConfig.js'),
       this.props
@@ -333,11 +318,6 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('app_start/RouterConfig.js'),
       this.destinationPath('app_start/RouterConfig.js'),
-      this.props
-    );
-    this.fs.copyTpl(
-      this.templatePath('app_start/ServerStartConfig.js'),
-      this.destinationPath('app_start/ServerStartConfig.js'),
       this.props
     );
     this.fs.copyTpl(
