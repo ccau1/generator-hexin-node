@@ -21,8 +21,36 @@ module.exports = class extends Generator {
     // checking current project state, getting configs, etc
   }
 
+  _dbPrompts() {
+    const dbType = {
+      MONGO: 'mongo',
+      MYSQL: 'mysql'
+    };
+    return [
+      {
+        type    : 'list',
+        name    : 'db',
+        message : 'Database',
+        choices : [dbType.MONGO, dbType.MYSQL],
+        default: dbType.MONGO
+      },
+      {
+        type    : 'input',
+        name    : 'dbName',
+        message : 'Database:: name',
+        validate: function(prop) {
+          if (!prop) {
+            return 'Database Name Required';
+          } else {
+            return true;
+          }
+        }
+      }
+    ]
+  }
+
   _mailerPrompts() {
-    const SERVICE = {
+    const service = {
       GMAIL: 'gmail'
     };
     return [
@@ -35,7 +63,7 @@ module.exports = class extends Generator {
         type    : 'list',
         name    : 'mailerService',
         message : 'Mailer:: service',
-        choices : ['gmail'],
+        choices : [service.GMAIL],
         when: function(props) {
           return props.mailer;
         }
@@ -45,7 +73,7 @@ module.exports = class extends Generator {
         name    : 'mailerAuthUser',
         message : 'Mailer:: email',
         when: function(props) {
-          return props.mailer && props.mailerService === SERVICE.GMAIL;
+          return props.mailer && props.mailerService === service.GMAIL;
         },
         validate: function(prop) {
           if (!prop) {
@@ -60,7 +88,7 @@ module.exports = class extends Generator {
         name    : 'mailerAuthPass',
         message : 'Mailer:: password',
         when: function(props) {
-          return props.mailer && props.mailerService === SERVICE.GMAIL;
+          return props.mailer && props.mailerService === service.GMAIL;
         },
         validate: function(prop) {
           if (!prop) {
@@ -148,8 +176,18 @@ module.exports = class extends Generator {
             return !this.options.name;
           },
           default : this.appname // Default to current folder name
+        },
+        {
+          type    : 'input',
+          name    : 'port',
+          message : 'Port Number',
+          default: 8280,
+          validate: function(prop) {
+            return isNaN(prop) ? 'Invalid Port Number' : true;
+          }
         }
       ].concat(
+        this._dbPrompts(),
         this._mailerPrompts(),
         this._redisPrompts(),
         this._fivebeansPrompts()
@@ -205,7 +243,22 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('.gitignore'),
+      this.templatePath('.npmrc'),
+      this.destinationPath('.npmrc'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('.nvmrc'),
+      this.destinationPath('.nvmrc'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('.gitignorefile'),
+      this.destinationPath('.gitignore'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('.gitignorefile'),
       this.destinationPath('.gitignore'),
       this.props
     );
@@ -316,6 +369,11 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
+      this.templatePath('app_start/UnitOfWorkConfig.js'),
+      this.destinationPath('app_start/UnitOfWorkConfig.js'),
+      this.props
+    );
+    this.fs.copyTpl(
       this.templatePath('app_start/ViewsConfig.js'),
       this.destinationPath('app_start/ViewsConfig.js'),
       this.props
@@ -335,19 +393,30 @@ module.exports = class extends Generator {
       this.destinationPath('app/helpers/indicatives.js'),
       this.props
     );
+
     this.fs.copyTpl(
-      this.templatePath('app/models/LocalizedString.js'),
-      this.destinationPath('app/models/LocalizedString.js'),
+      this.templatePath('app/models/User_' + this.props.db + '.js'),
+      this.destinationPath('app/models/User.js'),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('app/models/User.js'),
-      this.destinationPath('app/models/User.js'),
+      this.templatePath('app/models/ModelContext_' + this.props.db + '.js'),
+      this.destinationPath('app/models/ModelContext.js'),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('app/services/AuthService.js'),
       this.destinationPath('app/services/AuthService.js'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('app/repos/_unitOfWork.js'),
+      this.destinationPath('app/repos/_unitOfWork.js'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('app/repos/UserRepo_' + this.props.db + '.js'),
+      this.destinationPath('app/repos/UserRepo.js'),
       this.props
     );
     this.fs.copyTpl(
@@ -358,6 +427,11 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('.vscode/settings.json'),
       this.destinationPath('.vscode/settings.json'),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('.vscode/tasks.json'),
+      this.destinationPath('.vscode/tasks.json'),
       this.props
     );
     this.fs.copyTpl(

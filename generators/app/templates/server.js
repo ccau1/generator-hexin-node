@@ -1,6 +1,5 @@
 'use strict';
 
-require('app-module-path').addPath(__dirname);
 const configs = require('./configs');
 const AppStart = require('./app_start');
 

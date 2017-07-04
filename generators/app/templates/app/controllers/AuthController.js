@@ -1,9 +1,6 @@
 'use strict';
 
-const co = require('co');
-
 const passport = require('passport');
-const moment = require('moment');
 const {ControllerBase} = require('hexin-core');
 
 // Service
@@ -47,9 +44,9 @@ module.exports = class AuthController extends ControllerBase {
       const {m} = req;
       const {user} = req._passport.session;
 
-      let token = m.generateJwtToken('member', user._id, {expire: moment.utc().unix() + 172800});
+      let token = m.generateJwtToken('member', user._id, {expire: new Date().getTime() + 172800});
       res.json({
-        id: user.id,
+        id: user._id,
         name: user.name,
         email: user.email,
         status: user.status,

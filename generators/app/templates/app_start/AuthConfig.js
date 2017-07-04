@@ -3,11 +3,10 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const jwt = require('jwt-simple');
-const co = require('co');
 const {AppStartConfig} = require('hexin-core');
 
 module.exports = class AuthConfig extends AppStartConfig {
-  preInit(appConfig) {
+  preInit(next, appConfig) {
     const {app} = appConfig;
     app.use(passport.initialize());
     passport.serializeUser((user, done) => {
@@ -17,34 +16,33 @@ module.exports = class AuthConfig extends AppStartConfig {
     passport.deserializeUser((user, done) => {
       done(null, user);
     });
+    next();
   }
-  init() {
-    const User = new require('../app/models/User');
+  init(nxt) {
+    const AuthService = require('../app/services/AuthService');
     const {appConfig} = this;
     const {router} = appConfig;
 
-    router.use((req, res, next) => {
+    router.use(async (req, res, next) => {
       if (req.headers.authorization) {
+        const {unitOfWork} = req;
         let parts = req.headers.authorization.split(' ');
         if (/^Bearer$/i.test(parts[0])) {
+          const token = jwt.decode(parts[1], appConfig.secret);
+          let user = null;
           try {
-            const token = jwt.decode(parts[1], appConfig.secret);
-
-            User.findOne({_id: token.sub}, (errors, user) => {
-              if (user) {
-                req.current_user = user;
-              }
-              next();
-            });
-          } catch (e) {
+            user = await unitOfWork.UserRepository.findOne({_id: token.sub});
+            if (user) {
+              req.current_user = user;
+            }
             next();
-            // return res.status(401).json({message: 'Unauthorized'});
+          } catch (err) {
+            next();
           }
         }
       } else {
         next();
       }
-      return null;
     });
 
     // declare password strategy
@@ -52,23 +50,25 @@ module.exports = class AuthConfig extends AppStartConfig {
       usernameField: 'username',
       passwordField: 'password',
       passReqToCallback: true
-    }, (req, username, password, callback) => {
-      const {t} = req.locale;
+    }, async (req, username, password, callback) => {
+      const {unitOfWork, locale: {t}} = req;
+      const authService = new AuthService(req);
 
-      co(function* () {
-        const user = yield User.findOne({$or: [{name: username}, {email: username}]}).exec();
+      const user = await unitOfWork.UserRepository.findOne({$or: [{username: username}, {email: username}]});
+
+      try {
         if (!user) {
           throw new ValidationError(t('err_find_no_result', ['users']));
         }
-        if (yield user.verifyPassword(password)) {
+        if (await authService.verifyPassword(user, password)) {
           callback(null, user, 'Login successfully.');
         } else {
           throw new ValidationError(t('err_member_password_invalid'));
         }
-      })
-      .catch(errors => {
-        return callback(errors, false, errors);
-      });
+      } catch (err) {
+        callback(err);
+      }
     }));
+    return nxt();
   }
 };

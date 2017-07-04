@@ -3,10 +3,11 @@
 const {AppStartConfig} = require('hexin-core');
 
 module.exports = class HttpHeadersConfig extends AppStartConfig {
-  init() {
+  init(next) {
     const {router} = this.appConfig;
 
     router.use(this.middleware);
+    next();
   }
 
   middleware(req, res, next) {

@@ -1,7 +1,7 @@
 {
 	"title": "<%= name %>",
 	"baseUrl": "/api",
-	"port": 8280,
+	"port": <%= port %>,
 	"debug": true,
   "secret": "1232412421412",
   "host": "http://localhost",
@@ -21,14 +21,37 @@
 		"port": "<%= fivebeansPort || '' %>"
 	},
 	"db": {
-		"main-db": {
+		<% if (db === 'mongo') { %>
+		"mongo-db": {
 			"engine": "mongo",
 			"connection": {
-				"hosts": ["primary:27017", "secondary1:27017", "secondary2:27017"],
-				"database": "<%= name %>",
-				"replicaSet": "<%= name %>-replicaset"
+				"hosts": ["localhost:27017"],
+				"database": "<%= name %>"
 			},
 			"default": true
     }
+		<% } else if (db === 'mysql') { %>
+		"mysql-db": {
+			"engine": "sequelize",
+			"connection": {
+				"user": "root",
+				"pass": "root",
+				"database": "<%= name %>",
+				"configs": {
+					"host": "localhost",
+					"port": "3306",
+					"dialect": "mysql",
+					"dialectOptions": {
+						"connectTimeout": 10000
+					},
+					"pool": {
+						"min": 1,
+						"max": 5,
+						"idle": 10000
+					}
+				}
+			}
+    }
+		<% } %>
 	}
 }

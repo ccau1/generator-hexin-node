@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Debug",
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "preLaunchTask": "nvm",
+            "runtimeExecutable": "${workspaceRoot}/.nvm-node",
+            "program": "${workspaceRoot}/server.js",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "skipFiles": [
+                "${workspaceRoot}/node_modules/**/*.js",
+                "<node_internals>/**/*.js",
+                "${workspaceRoot}/app_start"
+            ]
+        }
+    ]
+}

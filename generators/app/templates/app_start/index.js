@@ -21,6 +21,7 @@ const HttpHeaders = require('./HttpHeadersConfig');
 const Indicatives = require('./IndicativesConfig');
 const Locale = require('./LocaleConfig');
 const PublicPath = require('./PublicPathConfig');
+const UnitOfWork = require('./UnitOfWorkConfig');
 const Views = require('./ViewsConfig');
 
 module.exports = class AppStart extends AppStartBase {
@@ -34,11 +35,12 @@ module.exports = class AppStart extends AppStartBase {
 
     // HANDLE BEGIN :: (Don't remove this line)
     this.handle(new Db(appConfig));
-    this.handle(new Router(appConfig));
     this.handle(new HttpHeaders(appConfig));
+    this.handle(new Logger(appConfig));
+    this.handle(new Router(appConfig));
     this.handle(new Views(appConfig));
     this.handle(new PublicPath(appConfig));
-    this.handle(new Logger(appConfig));
+    this.handle(new UnitOfWork(appConfig));
     // this.handle(new Mailer(appConfig)); // Access from require('hexin-core/Mailer').client
     // this.handle(new FiveBeans(appConfig)); // Access from require('hexin-core/FiveBeans').client
     // this.handle(new Redis(appConfig)); // Access from require('hexin-core/Redis').client

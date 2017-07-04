@@ -1,6 +1,5 @@
 'use strict';
 
-const co = require('co');
 const {ControllerBase} = require('hexin-core');
 
 // Service
