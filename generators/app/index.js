@@ -243,12 +243,12 @@ module.exports = class extends Generator {
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('.npmrc'),
+      this.templatePath('.npmrcfile'),
       this.destinationPath('.npmrc'),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('.nvmrc'),
+      this.templatePath('.nvmrcfile'),
       this.destinationPath('.nvmrc'),
       this.props
     );
