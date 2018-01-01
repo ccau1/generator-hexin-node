@@ -1,7 +1,12 @@
 'use strict';
 
-const {ServiceBase} = require('hexin-core');
+const {ServiceBase} = require('@httpeace_deploy/httpeace-node-core');
 const indicative = require('indicative');
+const _ = require('lodash');
+const {constants} = require('../../configs');
+const {generateTokenAsync} = require('@httpeace_deploy/httpeace-node-core/helpers/Token');
+const MailerService = require('./MailerService');
+const Config = require('../../configs');
 
 const jwt = require('jwt-simple');
 const configs = require('../../configs').base;
@@ -10,10 +15,11 @@ const bCrypt = require('bcrypt-nodejs');
 module.exports = class AuthService extends ServiceBase {
   constructor(context_) {
     super(context_, context_.unitOfWork.UserRepository);
+    this.mailerService = new MailerService(context_);
   }
 
   async verifyPassword(user, password) {
-    return await new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       bCrypt.compare(password, user.password, (error, result) => {
         if (error) {
           reject(error);
@@ -24,7 +30,7 @@ module.exports = class AuthService extends ServiceBase {
   }
 
   async getHash(password) {
-    return await new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       bCrypt.genSalt(10, (saltErrors, salt) => {
         if (saltErrors) {
           throw new Error(saltErrors);
@@ -40,7 +46,7 @@ module.exports = class AuthService extends ServiceBase {
   }
 
   generateJwtToken(type, _id, opts) {
-    let token = jwt.encode({
+    const token = jwt.encode({
       iss: configs.host,
       sub: _id,
       exp: opts || (new Date().getTime() + 172800),
@@ -49,25 +55,30 @@ module.exports = class AuthService extends ServiceBase {
     return token;
   }
 
-  async createUser(registerObj) {
+  async createUser(bodyUser, roles = [constants.props.userRole.staff]) {
     const {t, _repo, unitOfWork} = this;
 
-    let user = await _repo.findOne({email: registerObj.email});
+    await this.validate(bodyUser);
+    const userObj = this.sanitize(bodyUser);
+    const user = await _repo.findOne({$or: [{email: userObj.email}, {username: userObj.username}]});
     if (user) {
-      throw new ValidationError(t('err_member_info_exist', [t('display_email_or_username')]));
+      if (user.email === userObj.email) {
+        throw new ValidationError({email: t('err_member_info_exist', [t('display_email_or_username')])});
+      } else { // if (user.username === userObj.username) {
+        throw new ValidationError({username: t('err_member_info_exist', [t('display_username')])});
+      }
     } else {
-      const hashedPassword = await this.getHash(registerObj.password);
-      let newUser = {
-        firstName: registerObj.firstName,
-        lastName: registerObj.lastName,
-        email: registerObj.email,
-        username: registerObj.email,
+      const hashedPassword = await this.getHash(userObj.password);
+      const newUser = {
+        firstName: userObj.firstName,
+        lastName: userObj.lastName,
+        email: userObj.email,
+        username: userObj.username,
         password: hashedPassword,
-        <% if (db === 'mongo') { %>
-        roles: ['user']
-        <% } else if (db === 'mysql') { %>
-        roles: 'user'
-        <% } %>
+        roles: roles,
+        company: userObj.company,
+        title: userObj.title,
+        work: userObj.work
       };
       const savedUser = await _repo.create(newUser);
       await unitOfWork.context.commit();
@@ -75,23 +86,77 @@ module.exports = class AuthService extends ServiceBase {
     }
   }
 
-  async forgotPassword(email) {
+  async resetPassword(email) {
     const {t, _repo} = this;
-    let user = await _repo.findOne({email: email});
+
+    const user = await _repo.findOne({email: email});
     if (!user) {
-      throw new ValidationError(t('err_not_exist', [t('display_email_or_username')]));
-    } else {
-      return user.reset_token;
+      throw new ValidationError(t('err_email_invalid'));
     }
+    const resetToken = await generateTokenAsync();
+    await this.updateResetToken(email, resetToken);
+    const body = await this.setEmailBodyResetPassword(resetToken);
+    const sendEmail = await this.mailerService.sendMail('cs@uncleprint.com.hk', email, 'Reset Password', body);
+    return sendEmail;
   }
 
-  async resetPassword(reset_token) {
+  async resetPasswordUpdate(newPassword, resetToken) {
     const {t, _repo} = this;
-    let user = await _repo.findOne({'reset_token.token': reset_token});
-    if (!user) {
-      throw new ValidationError(t('err_reset_token_expired'));
+
+    const validToken = await this.verifyResetToken(resetToken);
+    if (!validToken) {
+      throw new ValidationError(t('err_reset_token_invalid'));
     }
-    return user;
+
+    const hasedPassword = await this.getHash(newPassword);
+    const result = await _repo.updateOne({'resetToken.token': resetToken}, {'password': hasedPassword});
+    if (!result) {
+      throw new ValidationError(t('err_db_throw'));
+    }
+
+    return true;
+  }
+
+  async verifyResetToken(resetToken) {
+    const {_repo} = this;
+    const currentTime = new Date().getTime();
+
+    const tokenExists = await _repo.findOne({'resetToken.token': resetToken, 'resetToken.expiredAt': {$gt: currentTime}});
+    if (tokenExists) {
+      return true;
+    }
+    return false;
+  }
+
+  async updateResetToken(email, resetToken) {
+    const {_repo} = this;
+    const expiredAt = new Date(new Date().getTime() + (7 * 24 * 60 * 60 * 1000)).getTime();// expires after 1 week
+    const data = {};
+
+    data.resetToken = {
+      'token': resetToken,
+      'expiredAt': expiredAt
+    };
+    const result = await _repo.update({email: email}, data);
+    return result;
+  }
+
+  async setEmailBodyResetPassword(resetToken) {
+    const {context: {controller: {app: {parent: rootApp}}}} = this;
+
+    return new Promise(function (resolve, reject) {
+      const url = Config.base.host + ':' + Config.base.port + '/api/auth/reset-password-verify/' + resetToken;
+
+      rootApp.render('email/resetPassword', {
+        url: url
+      }, function (err, html) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(html);
+        }
+      });
+    });
   }
 
   async validate(obj) {
@@ -110,6 +175,6 @@ module.exports = class AuthService extends ServiceBase {
       same: t('err_member_password_not_match')
     };
 
-    return await indicative.validateAll(obj, rule, message);
+    return indicative.validateAll(obj, rule, message);
   }
 };

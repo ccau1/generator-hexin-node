@@ -1,6 +1,4 @@
-'use strict';
-
-const {AppStartConfig} = require('hexin-core');
+const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
 const indicatives = require('../app/helpers/indicatives');
 
 module.exports = class IndicativesConfig extends AppStartConfig {

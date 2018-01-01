@@ -1,8 +1,8 @@
 'use strict';
 
-const mongoose = require('hexin-core/helpers/Database').getConnection();
+const mongoose = require('@httpeace_deploy/httpeace-node-core/helpers/Database').getConnection();
 
-const Schema = mongoose.Schema;
+const {Schema} = mongoose;
 
 const UserSchema = new Schema({
   roles: [String],
@@ -10,7 +10,23 @@ const UserSchema = new Schema({
   lastName: {type: String, required: true},
   username: {type: String, required: true},
   email: {type: String, unique: true, required: true},
-  password: {type: String, minLength: 8, required: true}
+  loginChannel: {
+    type: {type: String, required: true},
+    id: {type: String}
+  },
+  password: {type: String, minLength: 8},
+  resetToken: {
+    token: {type: String},
+    expiredAt: {type: String}
+  },
+  avatars: [
+    {
+      fileMetaId: {type: Schema.Types.ObjectId, required: true},
+      name: {type: String, required: true},
+      uri: {type: String, required: true},
+      default: {type: Boolean, required: true}
+    }
+  ]
 }, {collection: 'users'});
 
 // Execute before each user.save() call

@@ -1,6 +1,6 @@
 'use strict';
 
-const SequelizeGenericRepository = require('hexin-core/repos/SequelizeGenericRepository');
+const SequelizeGenericRepository = require('@httpeace_deploy/httpeace-node-core/repos/SequelizeGenericRepository');
 
 class UserRepo extends SequelizeGenericRepository {
   constructor(ctxt) {

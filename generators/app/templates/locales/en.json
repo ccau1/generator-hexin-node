@@ -1,9 +1,12 @@
 {
   "display_email_or_username": "Email",
+  "display_username": "User Name",
   "display_signUpName": "SignUp Name",
+  "error_cannot_be_empty": "{0} Cannot Be empty",
   "err_db_throw": "DB Error: {0}",
   "err_find_no_result": "Cannot find {0}",
   "err_email_invalid": "Email is invalid.",
+  "err_reset_token_invalid": "Token is invalid.",
   "err_id_not_match": "ID does not match",
   "err_invalid_id": "Invalid ID",
   "err_invalid_gen_orderNo_input": "Invalid Generate Order No Input",

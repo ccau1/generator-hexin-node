@@ -1,10 +1,8 @@
-'use strict';
-
-const {AppStartConfig} = require('hexin-core');
+const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
 
 module.exports = class HttpHeadersConfig extends AppStartConfig {
   init(next) {
-    const {router} = this.appConfig;
+    const { router } = this.appConfig;
 
     router.use(this.middleware);
     next();
@@ -15,6 +13,14 @@ module.exports = class HttpHeadersConfig extends AppStartConfig {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
+
+    // intercepts OPTIONS method
+    if (req.method === 'OPTIONS') {
+      // respond with 200
+      res.send(200);
+    } else {
+      // move on
+      next();
+    }
   }
 };

@@ -2,56 +2,86 @@
   "name": "<%= name %>",
   "description": "<%= name %>",
   "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "logistics",
+    "wtt"
+  ],
+  "author": "<%= name %> <support@<%= name %>.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccau1/hexin.git"
+  },
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "lint": "eslint app --ext .js || true",
     "apidoc": "apidoc -i app/controllers/ -o public/docs/",
-    "test": "mocha \"__test__/**/*.js\"",
     "build": "npm run apidoc",
-    "plop": "plop",
     "g:controller": "plop Controller",
     "g:model": "plop Model",
     "g:service": "plop Service",
     "g:msc": "plop MSC",
     "g:app_start": "plop App_Start",
-    "nvm": "~/.nvm/nvm-exec which node | xargs -J % ln -sf % ./.nvm-node && chmod +x ./.nvm-node"
+    "i": "yarn install --frozen-lockfile",
+    "format":
+      "prettier --write \"{app,app_start,test,locales,configs}/**/*.js\"",
+    "nvm":
+      "~/.nvm/nvm-exec which node | xargs -J % ln -sf % ./.nvm-node && chmod +x ./.nvm-node",
+    "plop": "plop",
+    "seed": "node seeder",
+    "seed:remove": "node seederRemove",
+    "start": "node server",
+    "test": "mocha --config __test__/mocha.opts ./__test__/**/*.js",
+    "test:coverage": "nyc npm test",
+    "test:watch": "npm test -- --watch",
+    "lint": "eslint --fix {app,app_start,locales,configs}/**/*.{js,jsx}",
+    "precommit": "npm run lint && npm run test:coverage",
+    "eslint-check":
+      "eslint --print-config .eslintrc.json | eslint-config-prettier-check"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ccau1/hexin.git"
-  },
-  "keywords": [
-  ],
-  "author": "<%= name %> <support@<%= name %>.com>",
   "dependencies": {
+    "@httpeace_deploy/httpeace-node-core": "^0.1.20",
+    <% if (mediaPlugin) {%>"@httpeace_deploy/httpeace-plugin-media-node": "^0.1.37",<%} %>
+    <% if (pagePlugin) {%>"@httpeace_deploy/httpeace-plugin-page-node": "^0.1.4",<%} %>
+    <% if (postPlugin) {%>"@httpeace_deploy/httpeace-plugin-post-node": "^0.1.16",<%} %>
+    <% if (postPlugin) {%>"@httpeace_deploy/httpeace-plugin-post-constants": "^0.1.4",<%} %>
+    "app-module-path": "^2.2.0",
     "bcrypt-nodejs": "0.0.3",
-    "express": "^4.15.2",
+    "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
-    "fs": "0.0.2",
-    "hbs": "4.0.1",
-    "hexin-core": "^0.1.53",
     "indicative": "2.2.1",
     "jwt-simple": "0.5.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.2",
+    <% if (db === 'mysql') {%>"sequelize": "^4.2.0",<%}%>
+    <% if (db === 'mongo') {%>"mongodb": "^2.2.33",<%}%>
+    "mongoose": "4.10.8",
+    "mongoose-seed": "^0.3.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "pug": "2.0.0-beta11",
-    "require-dir": "^0.3.2",
-    <% if (db === 'mysql') {%>"sequelize": "^4.2.0"<%}%>
-    <% if (db === 'mongo') {%>"mongodb": "^2.2.29"<%}%>
+    "sequelize": "^4.22.11"
   },
   "devDependencies": {
     "apidoc": "^0.17.5",
-    "chai": "^3.5.0",
-    "eslint": "^3.19.0",
-    "eslint-config-aftership": "^3.3.0",
-    "eslint-plugin-import": "2.2.0",
+    "async-request": "^1.2.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "eslint-config-aftership": "^4.0.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.8.0",
+    "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-json": "1.2.0",
-    "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-react": "^6.10.3",
-    "mocha": "^3.4.2"
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.5.1",
+    "husky": "^0.14.3",
+    "mocha": "^4.0.1",
+    "mock-require": "^2.0.2",
+    "mongoose-mock": "^0.4.0",
+    "nyc": "^11.2.1",
+    "prettier": "1.8.2",
+    "sinon": "^4.1.1"
   },
-  "license": "MIT",
   "apidoc": {
     "name": "<%= name %>-API",
     "version": "0.1.0",

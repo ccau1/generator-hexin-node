@@ -23,7 +23,7 @@ exports.initRules = () => {
       if (objectID.isValid(fieldValue)) {
         resolve('valid ID');
       } else {
-        reject('ID must be in proper format');
+        reject(new ValidationError('ID must be in proper format'));
       }
       return true;
     });

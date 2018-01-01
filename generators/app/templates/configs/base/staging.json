@@ -1,0 +1,79 @@
+{
+	"title": "<%= name %>",
+	"baseUrl": "/api",
+	"port": "<%= port %>",
+	"debug": true,
+	"seed": {
+		"enable": false,
+		"showLog": false
+	},
+	"iams": {
+	  	"aws": {
+	    	"s3": "<%= awsS3User || '' %>",
+			"ses": "<%= awsSesUser || '' %>"
+		}
+	},
+	"secret": "1232412421412",
+	"host": "http://localhost",
+	"mail": {
+		"service": "<%= mailerService || '' %>",
+		"auth": {
+			"user": "<%= mailerAuthUser || '' %>",
+			"pass": "<%= mailerAuthPass || '' %>"
+		}
+	},
+	"redis": {
+		"host": "<%= redisHost || '' %>",
+		"port": "<%= redisPort || '' %>"
+	},
+	"fivebeans": {
+		"host": "<%= fivebeansHost || '' %>",
+		"port": "<%= fivebeansPort || '' %>"
+	},
+	"login": {
+		"facebook": {
+			"facebookApiKey": "252127728641517",
+			"facebookApiSecret": "fdb3c93af35b6538816c0529d1ba6f43",
+			"callbackUrl": "http://local.host:8280/api/auth/tokenFacebook/callback"
+		},
+		"google": {
+			"googleClientID": "202255070117-c30mnmifgo0li6k6fu52los0q93hup6k.apps.googleusercontent.com",
+			"googleClientSecret": "GI-qDYUls0wyyZVch2Za1dt9",
+			"callbackUrl": "http://localhost:8280/api/auth/tokenGoogle/callback"
+		}
+	},
+	"db": {
+		<% if (db === 'mongo') { %>
+		"mongo-db": {
+			"engine": "mongo",
+			"connection": {
+				"hosts": ["<%=mainDbHost %>:<%=mainDbPort %>"],
+				"database": "<%= dbName %>"
+			},
+			"default": true
+    	}
+			<% } else if (db === 'mysql') { %>
+		"mysql-db": {
+			"engine": "sequelize",
+			"connection": {
+				"user": "root",
+				"pass": "root",
+				"database": "<%= name %>",
+				"configs": {
+					"host": "<%=mainDbHost %>",
+					"port": "<%=mainDbPort %>",
+					"dialect": "mysql",
+					"dialectOptions": {
+						"connectTimeout": 10000
+					},
+					"pool": {
+						"min": 1,
+						"max": 5,
+						"idle": 10000
+					}
+				}
+			}
+    	}
+		<% } %>
+	}
+}

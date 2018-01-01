@@ -1,10 +1,11 @@
 'use strict';
 
 const passport = require('passport');
-const {ControllerBase} = require('hexin-core');
+const {ControllerBase} = require('@httpeace_deploy/httpeace-node-core');
+const actions = require('../controllersActions/AuthActions');
 
 // Service
-const AuthService = new require('../services/AuthService');
+const AuthService = require('../services/AuthService');
 
 module.exports = class AuthController extends ControllerBase {
   constructor(app) {
@@ -13,47 +14,6 @@ module.exports = class AuthController extends ControllerBase {
 
   renderRoutes(router) {
     const {authorize} = this;
-
-    /**
-    * @api {post} /auth/logout Logout user
-    * @apiName Logout
-    * @apiGroup auth
-    *
-    */
-    router.get('/logout', function* (req, res, next) {
-      // TODO:: implement logout logic
-
-      res.json({});
-    });
-
-    /**
-    * @api {post} /auth/login Get user token with credentials
-    * @apiName Login
-    * @apiGroup auth
-    *
-    * @apiParam {String} username User's Username/Email
-    * @apiParam {String} password User's Password
-    *
-    * @apiSuccess {String} id ID of the User.
-    * @apiSuccess {String} name  Name of the User.
-    * @apiSuccess {String} email  Email of the User.
-    * @apiSuccess {String} status  Status of the User.
-    * @apiSuccess {String} token  Token of the User.
-    */
-    router.post('/token', passport.authenticate('local'), (req, res, next) => {
-      const {m} = req;
-      const {user} = req._passport.session;
-
-      let token = m.generateJwtToken('member', user._id, {expire: new Date().getTime() + 172800});
-      res.json({
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        status: user.status,
-        token: token
-      });
-    });
-
     /**
     * @api {post} /auth/register Register new user
     * @apiName Register
@@ -71,46 +31,69 @@ module.exports = class AuthController extends ControllerBase {
     * @apiSuccess {String} password Password
     * @apiSuccess {String} confirmpassword Confirm Password
     */
-    router.post('/register', function* (req, res, next) {
-      const {m} = req;
-      const result = yield m.createUser(req.body);
-
-      res.send(result);
-    });
+    router.post('/register', actions.registerUser);
 
     /**
-    * @api {get} /auth/user Get current user
-    * @apiName Get Current User
+    * @api {post} /auth/token Get user token with credentials
+    * @apiName Login
     * @apiGroup auth
     *
+    * @apiParam {String} username User's Username/Email
+    * @apiParam {String} password User's Password
     *
-    * @apiSuccess {Object} user User
+    * @apiSuccess {String} id ID of the User.
+    * @apiSuccess {String} name  Name of the User.
+    * @apiSuccess {String} email  Email of the User.
+    * @apiSuccess {String} status  Status of the User.
+    * @apiSuccess {String} token  Token of the User.
     */
-    router.get('/user', authorize(), function* (req, res, next) {
-      const {current_user} = req;
-      res.send({
-        _id: current_user._id,
-        firstName: current_user.firstName,
-        lastName: current_user.lastName,
-        email: current_user.email,
-        roles: current_user.roles
-      });
-    });
+    router.post('/token', passport.authenticate('local'), actions.getUserToken);
 
     /**
-    * @api {post} /auth/forgot-password Forgot password
-    * @apiName Forgot Password
+    * @api {get} /auth/tokenFacebook Login and register using facebook
+    * @apiName Login From Facebook
     * @apiGroup auth
-    *
-    * @apiParam {String} email User's e-mail address
-    *
-    * @apiSuccess {String} reset_token  Token to call reset_password
     */
-    router.post('/forgot-password', authorize(), function* (req, res, next) {
-      const {m} = req;
-      const result = yield m.forgotPassword(req.body.email);
-      res.send(result);
-    });
+    router.get('/tokenFacebook', passport.authenticate('facebook', {scope: ['email', 'public_profile', 'user_friends']}));
+
+    /**
+    * @api {get} /auth/tokenFacebook/callback Get user token with credentials using facebook
+    * @apiName Login From Facebook callback
+    * @apiGroup auth
+    * @apiSuccess {String} User id, name, email, status, token
+    */
+    router.get('/tokenFacebook/callback', passport.authenticate('facebook', {failureRedirect: '/api/auth/tokenFacebook/failed'}), actions.loginFacebook);
+
+    /**
+    * @api {get} /auth/tokenFacebook/failed return the failed message if facebook login or register failed
+    * @apiName Login From Facebook fail
+    * @apiGroup auth
+    * @apiSuccess {String} message Fail message
+    */
+    router.get('/tokenFacebook/failed', actions.loginFacebookFail);
+
+    /**
+    * @api {get} /auth/tokenGoogle Login and register using google
+    * @apiName Login From google
+    * @apiGroup auth
+    */
+    router.get('/tokenGoogle', passport.authenticate('google', {scope: ['email', 'profile']}));
+
+    /**
+    * @api {get} /auth/tokenGoogle/callback Get user token with credentials using google
+    * @apiName Login From Google callback
+    * @apiGroup auth
+    * @apiSuccess {String} User id, name, email, status, token
+    */
+    router.get('/tokenGoogle/callback', passport.authenticate('google', {failureRedirect: '/api/auth/tokenGoogle/failed'}), actions.loginGoogle);
+
+    /**
+    * @api {get} /auth/tokenGoogle/failed return the failed message if google login or register failed
+    * @apiName Login From google fail
+    * @apiGroup auth
+    * @apiSuccess {String} message Fail message
+    */
+    router.get('/tokenGoogle/failed', actions.loginGoogleFail);
 
     /**
     * @api {post} /auth/reset-password Reset password
@@ -120,10 +103,37 @@ module.exports = class AuthController extends ControllerBase {
     * @apiParam {String} reset_token Reset token provided to user from email
     *
     */
-    router.post('/reset-password', authorize(), function* (req, res, next) {
-      const {m} = req;
-      const result = yield m.resetPassword(req.body.reset_token);
-      res.status(204).send(result);
-    });
+    router.post('/reset-password', actions.resetPassword);
+
+    /**
+    * @api {post} /auth/reset-password-verify/:token Verify token
+    * @apiName Reset-password-verify
+    * @apiGroup auth
+    *
+    * @apiParam {String} token Access token
+    *
+    * @apiSuccess {Boolean} valid Token valid status
+    */
+    router.get('/reset-password-verify/:token', actions.resetPasswordVerify);
+
+    /**
+    * @api {post} /auth/reset-password/:token Validate token
+    * @apiName Reset-password-verify-token
+    * @apiGroup auth
+    *
+    * @apiParam {String} password Password
+    * @apiParam {String} token Access token
+    *
+    * @apiSuccess {Boolean} updated Updated status
+    */
+    router.post('/reset-password/:token', actions.resetPasswordUpdate);
+
+    /**
+    * @api {post} /auth/logout Logout user
+    * @apiName Logout
+    * @apiGroup auth
+    *
+    */
+    router.get('/logout', authorize(), actions.logoutUser);
   }
 };

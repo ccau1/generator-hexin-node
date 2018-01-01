@@ -1,0 +1,12 @@
+{
+  "userRole": {
+    "customer": "customer",
+    "staff": "staff",
+    "systemAdministrator": "systemAdmin"
+  },
+  "loginChannel": {
+    "normal": "normal",
+    "facebook": "facebook",
+    "google": "google"
+  }
+}

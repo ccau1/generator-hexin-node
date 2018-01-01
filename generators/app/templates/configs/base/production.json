@@ -1,10 +1,20 @@
 {
 	"title": "<%= name %>",
 	"baseUrl": "/api",
-	"port": <%= port %>,
+	"port": "<%= port %>",
 	"debug": true,
-  "secret": "1232412421412",
-  "host": "http://localhost",
+	"seed": {
+		"enable": false,
+		"showLog": false
+	},
+	"iams": {
+	  	"aws": {
+	    	"s3": "<%= awsS3User || '' %>",
+			"ses": "<%= awsSesUser || '' %>"
+		}
+	},
+	"secret": "1232412421412",
+	"host": "http://localhost",
 	"mail": {
 		"service": "<%= mailerService || '' %>",
 		"auth": {
@@ -20,16 +30,28 @@
 		"host": "<%= fivebeansHost || '' %>",
 		"port": "<%= fivebeansPort || '' %>"
 	},
+	"login": {
+		"facebook": {
+			"facebookApiKey": "252127728641517",
+			"facebookApiSecret": "fdb3c93af35b6538816c0529d1ba6f43",
+			"callbackUrl": "http://local.host:8280/api/auth/tokenFacebook/callback"
+		},
+		"google": {
+			"googleClientID": "202255070117-c30mnmifgo0li6k6fu52los0q93hup6k.apps.googleusercontent.com",
+			"googleClientSecret": "GI-qDYUls0wyyZVch2Za1dt9",
+			"callbackUrl": "http://localhost:8280/api/auth/tokenGoogle/callback"
+		}
+	},
 	"db": {
 		<% if (db === 'mongo') { %>
 		"mongo-db": {
 			"engine": "mongo",
 			"connection": {
-				"hosts": ["localhost:27017"],
+				"hosts": ["<%=mainDbHost %>:<%=mainDbPort %>"],
 				"database": "<%= name %>"
 			},
 			"default": true
-    }
+    	}
 		<% } else if (db === 'mysql') { %>
 		"mysql-db": {
 			"engine": "sequelize",
@@ -38,8 +60,8 @@
 				"pass": "root",
 				"database": "<%= name %>",
 				"configs": {
-					"host": "localhost",
-					"port": "3306",
+					"host": "<%=mainDbHost %>",
+					"port": "<%=mainDbPort %>",
 					"dialect": "mysql",
 					"dialectOptions": {
 						"connectTimeout": 10000
@@ -51,7 +73,7 @@
 					}
 				}
 			}
-    }
+    	}
 		<% } %>
 	}
 }

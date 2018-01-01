@@ -1,19 +1,19 @@
 {
-  "extends": "aftership",
-  "plugins": [
-    "json"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier", "react"],
   "rules": {
-    // disable rules from base configurations
-    "indent": ["error", 2],
-    "comma-dangle": ["error"],     // disallow trailing commas in object literals
-    "no-new-require": "off",
-    "operator-assignment": "off",
-    "linebreak-style": "off"
+    "prettier/prettier": ["error"],
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "no-restricted-globals": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "global-require": "off",
+    "no-unused-vars": "off",
+    "func-names": "off",
+    "no-console": ["warn", { "allow": ["info", "warn", "error"] }]
   },
   "globals": {
-    "HttpResponseError": true,
-    "ValidationError": true,
-    "HttpStatusCode": true
+    "ValidationError": true
   }
 }
