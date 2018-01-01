@@ -1,7 +1,7 @@
 'use strict';
 
-const MongoGenericRepository = require('@httpeace_deploy/httpeace-node-core/repos/MongoGenericRepository');
-const mongoose = require('@httpeace_deploy/httpeace-node-core/helpers/Database').getConnection();
+const MongoGenericRepository = require('hexin-core/repos/MongoGenericRepository');
+const mongoose = require('hexin-core/helpers/Database').getConnection();
 
 class UserRepo extends MongoGenericRepository {
   constructor(ctxt) {

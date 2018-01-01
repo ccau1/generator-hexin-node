@@ -1,6 +1,6 @@
 'use strict';
 
-const UnitOfWorkBase = require('@httpeace_deploy/httpeace-node-core/repos/UnitOfWorkBase');
+const UnitOfWorkBase = require('hexin-core/repos/UnitOfWorkBase');
 
 const UserRepo = require('./UserRepo');
 const IamRepo = require('./IamRepo');

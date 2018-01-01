@@ -6,7 +6,7 @@ Request Body
 
 ```
 {
-    "from": "kanishka@httpeace.com",
+    "from": "kanishka@hexin.com",
     "to": "kanishka@test.com",
     "subject": "test subject",
     "body": "test body"

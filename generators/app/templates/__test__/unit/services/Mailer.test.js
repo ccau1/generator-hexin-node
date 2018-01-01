@@ -3,7 +3,7 @@
 const {expect} = require('chai');
 const {serviceTest} = require('../../helper');
 
-const Mailer = require('@httpeace_deploy/httpeace-node-core/helpers/Mailer');
+const Mailer = require('hexin-core/helpers/Mailer');
 const MailerService = require('../../../app/services/MailerService');
 
 describe('Unit Testing: Service: Mailer', serviceTest({

@@ -1,7 +1,7 @@
 'use strict';
 
 const passport = require('passport');
-const {ControllerBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ControllerBase} = require('hexin-core');
 const actions = require('../controllersActions/AuthActions');
 
 // Service

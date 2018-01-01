@@ -27,7 +27,7 @@ Response -  Updated User object (object)
     "_id": "599fde0eb11467be59511936",
     "firstName": "kk",
     "lastName": "pp",
-    "email": "k@httpeace.com",
+    "email": "k@hexin.com",
     "username": "kani",
     "password": "$2a$10$EBrlHf7VslVBqR5DShT8U.iE1ZQV9qIKjyhShRJ846mb1MW2kX7A6",
     "__v": 0,
@@ -44,7 +44,7 @@ Response -  Updated User object (object)
 
 # Postman Example
 
-### Request 
+### Request
 ![](images/accountUpdateUserRequestHeader.png?raw=true)
 ![](images/accountUpdateUserRequestBody.png?raw=true)
 

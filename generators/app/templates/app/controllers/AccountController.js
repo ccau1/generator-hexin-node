@@ -1,6 +1,6 @@
 'use strict';
 
-const {ControllerBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ControllerBase} = require('hexin-core');
 const AccountService = require('../services/AccountService');
 const actions = require('../controllersActions/AccountActions');
 

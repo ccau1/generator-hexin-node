@@ -8,7 +8,7 @@
                 "firstName": "test",
                 "lastName": "test",
                 "username": "test",
-                "email": "test@httpeace.com",
+                "email": "test@hexin.com",
                 "password": "$2a$10$ebjR6tWvcxCG8YDfs11p1evybnSfnh4Ezg/3bTXfl6Ab.BMPyQNOO",
                 "loginChannel" : {
                     "type" : "normal",
@@ -26,7 +26,7 @@
                 "firstName": "test2",
                 "lastName": "test2",
                 "username": "test2",
-                "email": "tes2t@httpeace.com",
+                "email": "tes2t@hexin.com",
                 "password": "$2a$10$ebjR6tWvcxCG8YDfs11p1evybnSfnh4Ezg/3bTXfl6Ab.BMPyQNOO",
                 "loginChannel" : {
                     "type" : "normal",

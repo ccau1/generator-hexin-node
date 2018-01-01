@@ -18,7 +18,7 @@ describe('Unit Testing: Actions: Auth', controllerTest({
       body: { // below object is not validated
         'firstName': 'pahak',
         'lastName': 'rai',
-        'email': 'pahak@httpeace.com',
+        'email': 'pahak@hexin.com',
         'username': 'pahak',
         'password': '45187801',
         'confirmPassword': '45187801'
@@ -83,7 +83,7 @@ describe('Unit Testing: Actions: Auth', controllerTest({
     await this.stub(this.m, 'resetPassword', {});
     const req = Object.assign({}, this, {
       body: { // below object is not validated
-        'email': 'pahak@httpeace.com'
+        'email': 'pahak@hexin.com'
       }
     });
     await ControllerActions.resetPassword(req, this.res);

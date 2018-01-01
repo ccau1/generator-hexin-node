@@ -1,6 +1,6 @@
 'use strict';
 
-const mongoose = require('@httpeace_deploy/httpeace-node-core/helpers/Database').getConnection();
+const mongoose = require('hexin-core/helpers/Database').getConnection();
 
 const {Schema} = mongoose;
 const SchemaTypes = Schema.Types;

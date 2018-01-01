@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const { Config } = require('@httpeace_deploy/httpeace-node-core');
+const { Config } = require('hexin-core');
 
 module.exports.env = process.env.NODE_ENV || 'development';
 module.exports.base = undefined;

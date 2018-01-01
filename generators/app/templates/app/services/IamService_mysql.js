@@ -1,6 +1,6 @@
 'use strict';
 
-const {ServiceCrudBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ServiceCrudBase} = require('hexin-core');
 
 module.exports = class IamService extends ServiceCrudBase {
   constructor(context_) {
@@ -13,7 +13,7 @@ module.exports = class IamService extends ServiceCrudBase {
 
     const newIamUser = {
         'params':{
-            'host': iamUser.host, 
+            'host': iamUser.host,
             'port': iamUser.port
         },
         'credentials':{

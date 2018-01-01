@@ -1,4 +1,4 @@
-[  
+[
    {
     "model": "Page",
     "documents": [
@@ -9,7 +9,7 @@
               "versions" : {
                   "zh_CN" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "613b29e3-25ec-408f-8aa5-dac777375577",
                                   "createdAt" : 1497004591042.0,
@@ -20,7 +20,7 @@
                                           "url" : "https://static.wixstatic.com/media/baa11a_7c001e1533f0473087fb03409893a321~mv2_d_5472_3648_s_4_2.jpg/v1/crop/x_0,y_2042,w_5472,h_859/fill/w_1656,h_260,al_c,q_85,usm_0.66_1.00_0.01/baa11a_7c001e1533f0473087fb03409893a321~mv2_d_5472_3648_s_4_2.webp"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "l" : 30,
@@ -49,7 +49,7 @@
                   },
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "613b29e3-25ec-408f-8aa5-dac777375577",
@@ -61,7 +61,7 @@
                                           "url" : "https://static.wixstatic.com/media/baa11a_7c001e1533f0473087fb03409893a321~mv2_d_5472_3648_s_4_2.jpg/v1/crop/x_0,y_2042,w_5472,h_859/fill/w_1656,h_260,al_c,q_85,usm_0.66_1.00_0.01/baa11a_7c001e1533f0473087fb03409893a321~mv2_d_5472_3648_s_4_2.webp"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "containerStyle" : 0,
                                   "padding" : {
@@ -102,7 +102,7 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "_element" : {
                                       "val" : {
@@ -115,7 +115,7 @@
                                   "createdAt" : 1497004620421.0,
                                   "identifier" : "90be76fd-ede9-4932-b3a4-2086d7c8adfe",
                                   "containerStyle" : 0
-                              }, 
+                              },
                               {
                                   "identifier" : "7f97243a-67f5-44dc-bf3e-a4c2297d6eee",
                                   "createdAt" : 1496889187706.0,
@@ -144,7 +144,7 @@
                   },
                   "zh_CN" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "_element" : {
                                       "val" : {
@@ -155,7 +155,7 @@
                                   "lastModified" : 1497004620421.0,
                                   "createdAt" : 1497004620421.0,
                                   "identifier" : "90be76fd-ede9-4932-b3a4-2086d7c8adfe"
-                              }, 
+                              },
                               {
                                   "identifier" : "7f97243a-67f5-44dc-bf3e-a4c2297d6eee",
                                   "createdAt" : 1496889187706.0,
@@ -195,7 +195,7 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "5c1e29ff-ef89-4511-a36c-3f0a6b6aaf64",
                                   "createdAt" : 1497004877638.0,
@@ -206,7 +206,7 @@
                                           "url" : "https://static.wixstatic.com/media/baa11a_7c001e1533f0473087fb03409893a321~mv2_d_5472_3648_s_4_2.jpg/v1/crop/x_0,y_2042,w_5472,h_859/fill/w_1656,h_260,al_c,q_85,usm_0.66_1.00_0.01/baa11a_7c001e1533f0473087fb03409893a321~mv2_d_5472_3648_s_4_2.webp"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "_element" : {
                                       "val" : {
@@ -223,7 +223,7 @@
                                       "b" : 0,
                                       "l" : 30
                                   }
-                              }, 
+                              },
                               {
                                   "identifier" : "5dfa0957-cc5d-4da9-8574-410939788e0d",
                                   "createdAt" : 1497004913883.0,
@@ -232,9 +232,9 @@
                                       "type" : "rowLayout",
                                       "val" : {
                                           "split" : "2",
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "identifier" : "8b6e366e-87c7-44c7-a225-53e52914c596",
                                                           "createdAt" : 1497004932050.0,
@@ -256,9 +256,9 @@
                                                       "b" : 0,
                                                       "l" : 0
                                                   }
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "identifier" : "89fa9d39-60e2-4a23-b9be-beb39f55433d",
                                                           "createdAt" : 1497004947549.0,
@@ -284,7 +284,7 @@
                                       "b" : 0,
                                       "l" : 30
                                   }
-                              }, 
+                              },
                               {
                                   "identifier" : "9d36ac71-78a3-4b14-894e-b89156c3347d",
                                   "createdAt" : 1497004958488.0,
@@ -293,9 +293,9 @@
                                       "type" : "rowLayout",
                                       "val" : {
                                           "split" : "2",
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "identifier" : "403d0c92-f6c9-4b04-9b67-935b5f8af1ce",
                                                           "createdAt" : 1497004974272.0,
@@ -317,9 +317,9 @@
                                                       "b" : 0,
                                                       "l" : 0
                                                   }
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "identifier" : "2e247cd8-ae2d-4095-aa1f-de63979085ab",
                                                           "createdAt" : 1497004984275.0,
@@ -368,7 +368,7 @@
                               "r" : 0,
                               "t" : 0
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "2f45071c-a17b-4b83-94ba-8cb62915f6f7",
                                   "createdAt" : 1497004809044.0,
@@ -380,7 +380,7 @@
                                       }
                                   },
                                   "containerStyle" : 0
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "t" : 60,
@@ -398,7 +398,7 @@
                                   "createdAt" : 1496889168932.0,
                                   "identifier" : "18912901-1ff2-4db3-ad2e-580c4e350c92",
                                   "containerStyle" : 0
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "t" : 60,
@@ -408,12 +408,12 @@
                                   },
                                   "_element" : {
                                       "val" : {
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
                                                   "compSettings" : {
                                                       "widthPercentage" : "60"
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
@@ -427,7 +427,7 @@
                                                           "identifier" : "f61850b1-8c9e-4b23-87b7-a48902b02906"
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
                                                   "padding" : {
                                                       "l" : 20,
@@ -438,7 +438,7 @@
                                                   "compSettings" : {
                                                       "widthPercentage" : "40"
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "identifier" : "b102f07b-452c-4c6f-9d78-c8a95730d50a",
                                                           "createdAt" : 1498703012909.0,
@@ -480,14 +480,14 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
                                       "val" : {
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "padding" : {
@@ -498,7 +498,7 @@
                                                           },
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "View Details",
                                                                           "link" : "/about/logistics"
@@ -513,12 +513,12 @@
                                                           "lastModified" : 1502098100624.0,
                                                           "createdAt" : 1502098100624.0,
                                                           "identifier" : "fc07f5ad-f543-4e60-a6b1-0e6605440ffe"
-                                                      }, 
+                                                      },
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "View Details",
                                                                           "link" : "/about/our-group"
@@ -535,7 +535,7 @@
                                                           "identifier" : "c90cccae-c2bf-4848-9412-0c49e06603ee"
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
                                                   "padding" : {
                                                       "l" : 0,
@@ -543,7 +543,7 @@
                                                       "r" : 0,
                                                       "t" : 0
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "padding" : {
@@ -554,7 +554,7 @@
                                                           },
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "View Details",
                                                                           "link" : "/about/our-vision"
@@ -569,12 +569,12 @@
                                                           "lastModified" : 1502098285692.0,
                                                           "createdAt" : 1502098285692.0,
                                                           "identifier" : "e837f859-4ca7-4792-af28-59b07258c726"
-                                                      }, 
+                                                      },
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "View Details",
                                                                           "link" : "/about/professional-equipment"
@@ -635,7 +635,7 @@
                               "r" : 30,
                               "t" : 80
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "8e0efcdf-4d24-4fa4-af06-430ef567fd07",
@@ -653,7 +653,7 @@
                                       "r" : 0,
                                       "t" : 0
                                   }
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "l" : 0,
@@ -668,9 +668,9 @@
                                       "type" : "rowLayout",
                                       "val" : {
                                           "split" : 3,
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "ef49f2b1-c102-417a-bfdf-3d2d3a00caad",
@@ -682,7 +682,7 @@
                                                                   "html" : "<p>香港總公司</p><p>九龍觀塘鴻圖道45號</p><p>宏光工業大廈1樓B室&nbsp;</p><p>星期一至五 11:00-19:30</p><p>星期六 11:00-17:00&nbsp;</p>"
                                                               }
                                                           }
-                                                      }, 
+                                                      },
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "4d1dd876-bf34-4968-ba72-ed2b830eb522",
@@ -697,7 +697,7 @@
                                                                       "lng" : 114.145073
                                                                   },
                                                                   "zoom" : 14,
-                                                                  "markers" : [ 
+                                                                  "markers" : [
                                                                       {
                                                                           "display" : "You are here!",
                                                                           "lat" : 22.288494,
@@ -721,9 +721,9 @@
                                                       "b" : 0,
                                                       "l" : 0
                                                   }
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "e3cf8479-f9f7-4fbc-bb53-298429f024ae",
@@ -735,7 +735,7 @@
                                                                   "html" : "<p>香港倉庫</p><p>九龍觀塘鴻圖道45號</p><p>宏光工業大廈1樓B室&nbsp;</p><p>星期一至五 11:00-19:30</p><p>星期六 11:00-17:00&nbsp;</p>"
                                                               }
                                                           }
-                                                      }, 
+                                                      },
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "0f875651-f2af-4553-a5b8-924883e4d65e",
@@ -750,7 +750,7 @@
                                                                       "lng" : 114.145073
                                                                   },
                                                                   "zoom" : 14,
-                                                                  "markers" : [ 
+                                                                  "markers" : [
                                                                       {
                                                                           "display" : "You are here!",
                                                                           "lat" : 22.288494,
@@ -774,9 +774,9 @@
                                                       "b" : 0,
                                                       "l" : 0
                                                   }
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "f794e5cd-56ea-4119-9b0f-5dc811ca6f5c",
@@ -788,7 +788,7 @@
                                                                   "html" : "<p>深圳倉庫</p><p>九龍觀塘鴻圖道45號</p><p>宏光工業大廈1樓B室&nbsp;</p><p>星期一至五 11:00-19:30</p><p>星期六 11:00-17:00&nbsp;</p>"
                                                               }
                                                           }
-                                                      }, 
+                                                      },
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "7038110d-84a4-48e1-901f-52a372d0164d",
@@ -803,7 +803,7 @@
                                                                       "lng" : 114.145073
                                                                   },
                                                                   "zoom" : 14,
-                                                                  "markers" : [ 
+                                                                  "markers" : [
                                                                       {
                                                                           "display" : "You are here!",
                                                                           "lat" : 22.288494,
@@ -825,7 +825,7 @@
                                           ]
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "l" : 0,
@@ -840,9 +840,9 @@
                                       "type" : "rowLayout",
                                       "val" : {
                                           "split" : 3,
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "d3c92a50-2d61-4c07-94a2-7c597a0f3528",
@@ -853,15 +853,15 @@
                                                               "val" : {
                                                                   "subjectPrefix" : "hoi ho",
                                                                   "split" : 3,
-                                                                  "to" : "calvinau@httpeace.com",
+                                                                  "to" : "calvinau@hexin.com",
                                                                   "api" : "http://localhost:8280/api/mailers/send"
                                                               }
                                                           }
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "89e4e2dc-2805-4277-8a55-87d06346f983",
@@ -875,9 +875,9 @@
                                                           }
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "5558abe6-9ee5-4a3e-9a70-03d0994863dd",
@@ -912,7 +912,7 @@
               "versions" : {
                   "zh_HK" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "2903dd8a-f2ee-417c-bc96-39d287e02964",
@@ -922,9 +922,9 @@
                                       "type" : "rowLayout",
                                       "val" : {
                                           "split" : 3,
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
@@ -938,14 +938,14 @@
                                                           "identifier" : "4b2fcbbc-d468-469a-987c-93fd5f79bbf3"
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "更多",
                                                                           "link" : "/about/our-group"
@@ -962,14 +962,14 @@
                                                           "lastModified" : 1496915940071.0
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "更多",
                                                                           "link" : "/reference-material/quotation#integrated"
@@ -1002,7 +1002,7 @@
                   },
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "2903dd8a-f2ee-417c-bc96-39d287e02964",
@@ -1018,7 +1018,7 @@
                                               "t" : 10
                                           },
                                           "split" : 3,
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
                                                   "padding" : {
                                                       "l" : 0,
@@ -1026,7 +1026,7 @@
                                                       "r" : 0,
                                                       "t" : 0
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "c6a1e356-4794-44f7-b620-19c2719a68a5",
@@ -1038,7 +1038,7 @@
                                                                   "html" : "<h1><strong style=\"color: rgb(237, 134, 0);\">華通泰</strong><strong style=\"color: rgb(41, 0, 136);\">物流</strong></h1><h1><span style=\"color: rgb(237, 134, 0);\">WTT</span><strong style=\"color: rgb(41, 0, 136);\">-Worldexpress.com</strong></h1><p><span style=\"color: rgb(36, 41, 45);\">One Stop. Solution. One Step. Ahead</span></p>"
                                                               }
                                                           }
-                                                      }, 
+                                                      },
                                                       {
                                                           "identifier" : "a4f15b35-39a8-4334-b541-e3797637cedd",
                                                           "createdAt" : 1502450501612.0,
@@ -1050,7 +1050,7 @@
                                                               }
                                                           },
                                                           "containerStyle" : 0
-                                                      }, 
+                                                      },
                                                       {
                                                           "identifier" : "0e8428f1-5d8c-4c33-af16-a7224a23f632",
                                                           "createdAt" : 1502271960169.0,
@@ -1059,7 +1059,7 @@
                                                               "type" : "Posts",
                                                               "val" : {
                                                                   "showCount" : 5,
-                                                                  "posts" : [ 
+                                                                  "posts" : [
                                                                       {
                                                                           "id" : "598ad7108c916e92ec1c8346",
                                                                           "__v" : 0,
@@ -1079,7 +1079,7 @@
                                                           "containerStyle" : 0
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
                                                   "padding" : {
                                                       "l" : 0,
@@ -1087,12 +1087,12 @@
                                                       "r" : 0,
                                                       "t" : 0
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "More",
                                                                           "link" : "/about/our-group"
@@ -1109,14 +1109,14 @@
                                                           "lastModified" : 1496915940071.0
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "More",
                                                                           "link" : "/reference-material/quotation#integrated"
@@ -1149,7 +1149,7 @@
                   },
                   "zh_CN" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "2903dd8a-f2ee-417c-bc96-39d287e02964",
@@ -1159,7 +1159,7 @@
                                       "type" : "rowLayout",
                                       "val" : {
                                           "split" : 3,
-                                          "rows" : [ 
+                                          "rows" : [
                                               {
                                                   "padding" : {
                                                       "l" : 0,
@@ -1167,7 +1167,7 @@
                                                       "r" : 0,
                                                       "t" : 0
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "identifier" : "c6a1e356-4794-44f7-b620-19c2719a68a5",
@@ -1181,7 +1181,7 @@
                                                           }
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
                                                   "padding" : {
                                                       "l" : 0,
@@ -1189,12 +1189,12 @@
                                                       "r" : 0,
                                                       "t" : 0
                                                   },
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "更多",
                                                                           "link" : "/about/our-group"
@@ -1211,14 +1211,14 @@
                                                           "lastModified" : 1496915940071.0
                                                       }
                                                   ]
-                                              }, 
+                                              },
                                               {
-                                                  "items" : [ 
+                                                  "items" : [
                                                       {
                                                           "containerStyle" : 0,
                                                           "_element" : {
                                                               "val" : {
-                                                                  "links" : [ 
+                                                                  "links" : [
                                                                       {
                                                                           "linkText" : "更多",
                                                                           "link" : "/reference-material/quotation#integrated"
@@ -1268,7 +1268,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "c42e342e-bbce-4881-bce8-d89241f14471",
                                   "createdAt" : 1497003408159.0,
@@ -1302,7 +1302,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "80106683-9674-48e7-80e2-1e97dfe35761",
                                   "createdAt" : 1497003421066.0,
@@ -1313,7 +1313,7 @@
                                           "html" : "<h1>Corporate Information</h1><p><br></p><p><span style=\"font-size: 14px; font-family: &quot;Open Sans&quot;, sans-serif; color: rgb(36, 41, 45);\">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</span></p>"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "l" : 0,
@@ -1323,17 +1323,17 @@
                                   },
                                   "_element" : {
                                       "val" : {
-                                          "files" : [ 
+                                          "files" : [
                                               {
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png/v1/fill/w_246,h_308,al_c,usm_0.66_1.00_0.01/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png",
                                                   "name" : "dssd",
                                                   "url" : "asfd"
-                                              }, 
+                                              },
                                               {
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png/v1/fill/w_246,h_308,al_c,usm_0.66_1.00_0.01/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png",
                                                   "name" : "afs",
                                                   "url" : "asdf"
-                                              }, 
+                                              },
                                               {
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png/v1/fill/w_246,h_308,al_c,usm_0.66_1.00_0.01/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png",
                                                   "name" : "afsd",
@@ -1360,7 +1360,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "80106683-9674-48e7-80e2-1e97dfe35761",
                                   "createdAt" : 1497003421066.0,
@@ -1371,7 +1371,7 @@
                                           "html" : "<h1>Corporate Information</h1><p><br></p><p><span style=\"font-size: 14px; font-family: &quot;Open Sans&quot;, sans-serif; color: rgb(36, 41, 45);\">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</span></p>"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "padding" : {
                                       "l" : 0,
@@ -1381,17 +1381,17 @@
                                   },
                                   "_element" : {
                                       "val" : {
-                                          "files" : [ 
+                                          "files" : [
                                               {
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png/v1/fill/w_246,h_308,al_c,usm_0.66_1.00_0.01/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png",
                                                   "name" : "dssd",
                                                   "url" : "asfd"
-                                              }, 
+                                              },
                                               {
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png/v1/fill/w_246,h_308,al_c,usm_0.66_1.00_0.01/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png",
                                                   "name" : "afs",
                                                   "url" : "asdf"
-                                              }, 
+                                              },
                                               {
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png/v1/fill/w_246,h_308,al_c,usm_0.66_1.00_0.01/baa11a_3e61deae7b8b48fbbc6127e46bdbb6e2~mv2_d_2384_3370_s_2.png",
                                                   "name" : "afsd",
@@ -1429,7 +1429,7 @@
                               "r" : 15,
                               "t" : 20
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "b7d8edad-c12d-4a26-8a31-245ee1e9e0c6",
@@ -1441,7 +1441,7 @@
                                           "html" : "<h1>Promotion Documents</h1>"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1449,7 +1449,7 @@
                                           "isEnablePagination" : true,
                                           "showCount" : 20,
                                           "type" : "promotions",
-                                          "posts" : [ 
+                                          "posts" : [
                                               {}
                                           ]
                                       },
@@ -1481,7 +1481,7 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "identifier" : "034be7c4-7d50-4743-9d08-00a58ddf9789",
@@ -1493,7 +1493,7 @@
                                           "url" : "https://static.wixstatic.com/media/baa11a_e5b20851e43a4f7fa87be2d4faebcb6b~mv2_d_8176_4599_s_4_2.jpg/v1/fill/w_1656,h_260,al_c,q_85,usm_0.66_1.00_0.01/baa11a_e5b20851e43a4f7fa87be2d4faebcb6b~mv2_d_8176_4599_s_4_2.webp"
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "_element" : {
                                       "val" : {
@@ -1510,7 +1510,7 @@
                                       "r" : 30,
                                       "t" : 40
                                   }
-                              }, 
+                              },
                               {
                                   "containerId" : "integrated",
                                   "containerStyle" : 0,
@@ -1522,17 +1522,17 @@
                                       "val" : {
                                           "title" : "Intergrated Logistics",
                                           "fileHeight" : 150,
-                                          "files" : [ 
+                                          "files" : [
                                               {
                                                   "url" : "asdf",
                                                   "name" : "asdf",
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_7e8749219a944648957f0da9b3792da5~mv2.jpg/v1/fill/w_246,h_310,al_c,q_80,usm_0.66_1.00_0.01/baa11a_7e8749219a944648957f0da9b3792da5~mv2.webp"
-                                              }, 
+                                              },
                                               {
                                                   "url" : "afds",
                                                   "name" : "afs",
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_7e8749219a944648957f0da9b3792da5~mv2.jpg/v1/fill/w_246,h_310,al_c,q_80,usm_0.66_1.00_0.01/baa11a_7e8749219a944648957f0da9b3792da5~mv2.webp"
-                                              }, 
+                                              },
                                               {
                                                   "url" : "afs",
                                                   "name" : "sd",
@@ -1547,7 +1547,7 @@
                                       "r" : 30,
                                       "t" : 40
                                   }
-                              }, 
+                              },
                               {
                                   "containerId" : "international",
                                   "containerStyle" : 0,
@@ -1565,22 +1565,22 @@
                                       "val" : {
                                           "title" : "International Logistics",
                                           "fileHeight" : 150,
-                                          "files" : [ 
+                                          "files" : [
                                               {
                                                   "url" : "afs",
                                                   "name" : "sfad",
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_7e8749219a944648957f0da9b3792da5~mv2.jpg/v1/fill/w_246,h_310,al_c,q_80,usm_0.66_1.00_0.01/baa11a_7e8749219a944648957f0da9b3792da5~mv2.webp"
-                                              }, 
+                                              },
                                               {
                                                   "url" : "sadf",
                                                   "name" : "sd",
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_7e8749219a944648957f0da9b3792da5~mv2.jpg/v1/fill/w_246,h_310,al_c,q_80,usm_0.66_1.00_0.01/baa11a_7e8749219a944648957f0da9b3792da5~mv2.webp"
-                                              }, 
+                                              },
                                               {
                                                   "url" : "asdf",
                                                   "name" : "asfd",
                                                   "thumbnail" : "https://static.wixstatic.com/media/baa11a_7e8749219a944648957f0da9b3792da5~mv2.jpg/v1/fill/w_246,h_310,al_c,q_80,usm_0.66_1.00_0.01/baa11a_7e8749219a944648957f0da9b3792da5~mv2.webp"
-                                              }, 
+                                              },
                                               {
                                                   "url" : "dssdfs",
                                                   "name" : "dssda",
@@ -1589,7 +1589,7 @@
                                           ]
                                       }
                                   }
-                              }, 
+                              },
                               {
                                   "containerId" : "china-hk",
                                   "containerStyle" : 0,
@@ -1607,7 +1607,7 @@
                                       "val" : {
                                           "title" : "China & Hong Kong Logistics",
                                           "fileHeight" : 150,
-                                          "files" : [ 
+                                          "files" : [
                                               {
                                                   "url" : "sadf",
                                                   "name" : "sd",
@@ -1639,7 +1639,7 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1648,8 +1648,8 @@
                                           "height" : "400",
                                           "rotationSpeed" : "5000",
                                           "autoAnimation" : true,
-                                          "images" : [ 
-                                              "https://httpeace.atlassian.net/secure/attachment/22778/22778_homepage_1080X350-1.png"
+                                          "images" : [
+                                              "https://hexin.atlassian.net/secure/attachment/22778/22778_homepage_1080X350-1.png"
                                           ]
                                       }
                                   },
@@ -1685,7 +1685,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1720,7 +1720,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1755,7 +1755,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1790,7 +1790,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1825,7 +1825,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1854,7 +1854,7 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "c3a4e2eb-c3df-4fd4-bbed-c9c4e7099f40",
                                   "createdAt" : 1502107663726.0,
@@ -1895,7 +1895,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1930,7 +1930,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -1965,7 +1965,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2000,7 +2000,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2035,7 +2035,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2070,7 +2070,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2099,7 +2099,7 @@
               "versions" : {
                   "default" : {
                       "sections" : {
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2111,7 +2111,7 @@
                                   "lastModified" : 1502443504379.0,
                                   "createdAt" : 1502443504379.0,
                                   "identifier" : "26067b7e-d4fd-493b-8792-e7581ec04e74"
-                              }, 
+                              },
                               {
                                   "identifier" : "f382a94f-9a37-4623-84d3-e370936b5ac2",
                                   "createdAt" : 1502442753136.0,
@@ -2119,7 +2119,7 @@
                                   "_element" : {
                                       "type" : "Posts",
                                       "val" : {
-                                          "posts" : [ 
+                                          "posts" : [
                                               {}
                                           ],
                                           "type" : "news",
@@ -2157,7 +2157,7 @@
                               "r" : 15,
                               "t" : 20
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "identifier" : "412c7ea9-e6e2-4163-a4c5-c9669a767c5c",
                                   "createdAt" : 1502443484220.0,
@@ -2169,14 +2169,14 @@
                                       }
                                   },
                                   "containerStyle" : 0
-                              }, 
+                              },
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
                                       "val" : {
                                           "showCount" : 20,
                                           "type" : "promotions",
-                                          "posts" : [ 
+                                          "posts" : [
                                               {}
                                           ]
                                       },
@@ -2208,7 +2208,7 @@
                               "r" : 15,
                               "t" : 20
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2226,14 +2226,14 @@
                                   "lastModified" : 1502711327929.0,
                                   "createdAt" : 1502711327929.0,
                                   "identifier" : "c938524d-1d7a-49bc-b8d7-f8af9604564b"
-                              }, 
+                              },
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
                                       "val" : {
                                           "showCount" : 5,
                                           "type" : "news",
-                                          "posts" : [ 
+                                          "posts" : [
                                               {}
                                           ],
                                           "isEnablePagination" : true
@@ -2249,7 +2249,7 @@
                                   "lastModified" : 1502711364722.0,
                                   "createdAt" : 1502711364722.0,
                                   "identifier" : "41d2827c-3cde-4341-8896-f84a2a73d4a0"
-                              }, 
+                              },
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2267,14 +2267,14 @@
                                   "lastModified" : 1502711374755.0,
                                   "createdAt" : 1502711374755.0,
                                   "identifier" : "8947576a-3f5f-4953-9ffb-feca8bd9ebfa"
-                              }, 
+                              },
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
                                       "val" : {
                                           "showCount" : 5,
                                           "type" : "promotions",
-                                          "posts" : [ 
+                                          "posts" : [
                                               {}
                                           ],
                                           "isEnablePagination" : true
@@ -2313,7 +2313,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2354,7 +2354,7 @@
                               "b" : 60,
                               "l" : 15
                           },
-                          "items" : [ 
+                          "items" : [
                               {
                                   "containerStyle" : 0,
                                   "_element" : {
@@ -2381,7 +2381,7 @@
           "version" : 1,
           "lastModified" : 1502711346870.0,
           "__v" : 0
-      } 
+      }
     ]
    }
 ]

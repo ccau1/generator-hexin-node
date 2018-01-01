@@ -1,6 +1,6 @@
 'use strict';
 
-const {ServiceBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ServiceBase} = require('hexin-core');
 const MailerService = require('./MailerService');
 
 module.exports = class AccountService extends ServiceBase {

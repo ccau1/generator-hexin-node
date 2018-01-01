@@ -1,6 +1,6 @@
 'use strict';
 
-const sequelize = require('@httpeace_deploy/httpeace-node-core/helpers/Database').getConnection('mysql-db');
+const sequelize = require('hexin-core/helpers/Database').getConnection('mysql-db');
 const Sequelize = require('sequelize');
 
 const Iam = sequelize.define('iam', {

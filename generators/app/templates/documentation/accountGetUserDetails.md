@@ -15,7 +15,7 @@ Response -  User object (object)
     "_id": "599fde0eb11467be59511936",
     "firstName": "k",
     "lastName": "p",
-    "email": "k@httpeace.com",
+    "email": "k@hexin.com",
     "roles": [
         "staff"
     ]

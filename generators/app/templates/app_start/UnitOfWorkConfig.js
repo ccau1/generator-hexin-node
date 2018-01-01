@@ -1,4 +1,4 @@
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
+const { AppStartConfig } = require('hexin-core');
 
 module.exports = class UnitOfWorkConfig extends AppStartConfig {
   init(next) {

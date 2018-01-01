@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const jwt = require('jwt-simple');
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
+const { AppStartConfig } = require('hexin-core');
 
 module.exports = class AuthConfig extends AppStartConfig {
   preInit(next, appConfig) {

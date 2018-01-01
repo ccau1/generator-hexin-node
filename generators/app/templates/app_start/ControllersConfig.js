@@ -1,4 +1,4 @@
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
+const { AppStartConfig } = require('hexin-core');
 const fs = require('fs');
 const path = require('path');
 const PluginManager = require('../app/helpers/PluginManager');

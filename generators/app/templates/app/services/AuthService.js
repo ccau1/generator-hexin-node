@@ -1,10 +1,10 @@
 'use strict';
 
-const {ServiceBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ServiceBase} = require('hexin-core');
 const indicative = require('indicative');
 const _ = require('lodash');
 const {constants} = require('../../configs');
-const {generateTokenAsync} = require('@httpeace_deploy/httpeace-node-core/helpers/Token');
+const {generateTokenAsync} = require('hexin-core/helpers/Token');
 const MailerService = require('./MailerService');
 const Config = require('../../configs');
 

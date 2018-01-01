@@ -1,8 +1,8 @@
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
-const Seeder = require('@httpeace_deploy/httpeace-node-core/helpers/Seeder');
-const Database = require('@httpeace_deploy/httpeace-node-core/helpers/Database');
+const { AppStartConfig } = require('hexin-core');
+const Seeder = require('hexin-core/helpers/Seeder');
+const Database = require('hexin-core/helpers/Database');
 // plugin models
-// const Plugin_PageModel = require('@httpeace_deploy/httpeace-plugin-page-node/models/Page');
+// const Plugin_PageModel = require('hexin-core-plugins/hexin-plugin-page-node/models/Page');
 
 module.exports = class SeedConfig extends AppStartConfig {
   init(next) {

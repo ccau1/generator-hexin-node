@@ -1,9 +1,9 @@
 'use strict';
 
-const {ControllerBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ControllerBase} = require('hexin-core');
 
 // Service
-const Mailer = require('@httpeace_deploy/httpeace-node-core/helpers/Mailer');
+const Mailer = require('hexin-core/helpers/Mailer');
 
 module.exports = class MailerController extends ControllerBase {
   constructor(app) {

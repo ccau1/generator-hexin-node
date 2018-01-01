@@ -1,12 +1,12 @@
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
+const { AppStartConfig } = require('hexin-core');
 const PluginManager = require('../app/helpers/PluginManager');
 // const IamService = require("../app/services/IamService_mongo");
 // const config = require("../configs").getBase();
 
 // Plugins
-// const media = require('@httpeace_deploy/httpeace-plugin-media-node');
-// const page = require('@httpeace_deploy/httpeace-plugin-page-node');
-// const post = require('@httpeace_deploy/httpeace-plugin-post-node');
+// const media = require('hexin-core-plugins/hexin-plugin-media-node');
+// const page = require('hexin-core-plugins/hexin-plugin-page-node');
+// const post = require('hexin-core-plugins/hexin-plugin-post-node');
 
 module.exports = class PluginInjectorConfig extends AppStartConfig {
   preInit(next) {

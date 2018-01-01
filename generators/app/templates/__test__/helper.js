@@ -2,20 +2,20 @@
 
 const sinon = require('sinon');
 const bootstrap = require('./bootstrap.js');
-const Locale = require('@httpeace_deploy/httpeace-node-core/helpers/Locale');
+const Locale = require('hexin-core/helpers/Locale');
 const path = require('path');
 const PluginManager = require('../app/helpers/PluginManager');
 const configs = require('../configs').getBase();
 const jwt = require('jwt-simple');
-const MongoGenericRepository = require('@httpeace_deploy/httpeace-node-core/repos/MongoGenericRepository');
-const Error = require('@httpeace_deploy/httpeace-node-core/helpers/Error');
+const MongoGenericRepository = require('hexin-core/repos/MongoGenericRepository');
+const Error = require('hexin-core/helpers/Error');
 
 // const proxyquire = require('proxyquire');
 const mongooseMock = require('./mongooseMock');
 // const UnitOfWork = require('../app/repos');
 
 const mock = require('mock-require');
-mock('@httpeace_deploy/httpeace-node-core/helpers/Database', {
+mock('hexin-core/helpers/Database', {
   getConnection: () => mongooseMock
 });
 // MongoGenericRepository.prototype.handleCall = () => [];
@@ -152,67 +152,5 @@ module.exports = {
         done();
       });
     });
-  },
-  // appTest: function (globalVar, callback) {
-  //   const {getLocales} = module.exports;
-
-  //   if (!callback) {
-  //     callback = globalVar;
-  //     globalVar = null;
-  //   }
-
-  //   const token = jwt.encode({
-  //     iss: configs.host,
-  //     sub: '49b699d1bb3af06e43562ad4', // user id
-  //     exp: new Date().getTime() + 172800,
-  //     type: 'member'
-  //   }, configs.secret);
-  //   const baseUrl = configs.host + ':' + configs.port + configs.baseUrl;
-
-  //   return function () {
-  //     beforeEach(function (done) {
-  //       this.sinon = sinon.sandbox.create();
-  //       this.stub = async (className, functionName, returnValue) => {
-  //         return this.sinon.stub(className, functionName)
-  //           .returns(Promise.resolve(returnValue));
-  //       };
-  //       this.mock = this.sinon.mock;
-  //       this.spy = this.sinon.spy;
-
-
-  //       this.locale = getLocales();
-  //       this.locale.setCurrentLanguage('en');
-
-  //       bootstrap
-  //         .init()
-  //         .then(() => {
-  //           const UnitOfWork = require('../app/repos');
-  //           const ModelContext = require('../app/models/ModelContext');
-  //           this.modelContext = new ModelContext();
-  //           this.unitOfWork = new UnitOfWork(this.modelContext);
-  //           this.config = configs;
-  //           this.baseUrl = baseUrl;
-  //           this.token = token;
-
-  //           if (globalVar) {
-  //             Object.keys(globalVar).forEach(v => {
-  //               this[v] = globalVar[v].bind(this)(this);
-  //             });
-  //           }
-  //           done();
-  //         })
-  //         .catch(err => {
-  //           console.log('', err);
-  //         });
-  //     });
-
-
-  //     afterEach(function (done) {
-  //       this.sinon.restore();
-  //       done();
-  //     });
-
-  //     callback.bind(this)();
-  //   };
-  // }
+  }
 };

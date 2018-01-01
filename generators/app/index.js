@@ -1088,13 +1088,13 @@ module.exports = class extends Generator {
     const require = {
       media:
         pluginRequireArea +
-        "\nconst media = require('@httpeace_deploy/httpeace-plugin-media-node');",
+        "\nconst media = require('hexin-core-plugins/hexin-plugin-media-node');",
       post:
         pluginRequireArea +
-        "\nconst post = require('@httpeace_deploy/httpeace-plugin-post-node');",
+        "\nconst post = require('hexin-core-plugins/hexin-plugin-post-node');",
       page:
         pluginRequireArea +
-        "\nconst page = require('@httpeace_deploy/httpeace-plugin-page-node');"
+        "\nconst page = require('hexin-core-plugins/hexin-plugin-page-node');"
     };
 
     const create = {

@@ -1,9 +1,9 @@
 'use strict';
 
-const MongoDbContext = require('@httpeace_deploy/httpeace-node-core/models/MongoDbContext');
+const MongoDbContext = require('hexin-core/models/MongoDbContext');
 const User = require('./User');
 const Iam = require('./Iam');
-const mongoConnection = require('@httpeace_deploy/httpeace-node-core/helpers/Database').getConnection();
+const mongoConnection = require('hexin-core/helpers/Database').getConnection();
 const PluginManager = require('../helpers/PluginManager');
 
 class ModelContext extends MongoDbContext {

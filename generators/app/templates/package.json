@@ -40,11 +40,11 @@
       "eslint --print-config .eslintrc.json | eslint-config-prettier-check"
   },
   "dependencies": {
-    "@httpeace_deploy/httpeace-node-core": "^0.1.20",
-    <% if (mediaPlugin) {%>"@httpeace_deploy/httpeace-plugin-media-node": "^0.1.37",<%} %>
-    <% if (pagePlugin) {%>"@httpeace_deploy/httpeace-plugin-page-node": "^0.1.4",<%} %>
-    <% if (postPlugin) {%>"@httpeace_deploy/httpeace-plugin-post-node": "^0.1.16",<%} %>
-    <% if (postPlugin) {%>"@httpeace_deploy/httpeace-plugin-post-constants": "^0.1.4",<%} %>
+    "hexin-core": "^0.1.63",
+    <% if (mediaPlugin) {%>"hexin-core-plugins/hexin-plugin-media-node": "^0.1.37",<%} %>
+    <% if (pagePlugin) {%>"hexin-core-plugins/hexin-plugin-page-node": "^0.1.4",<%} %>
+    <% if (postPlugin) {%>"hexin-core-plugins/hexin-plugin-post-node": "^0.1.16",<%} %>
+    <% if (postPlugin) {%>"hexin-core-plugins/hexin-plugin-post-constants": "^0.1.4",<%} %>
     "app-module-path": "^2.2.0",
     "bcrypt-nodejs": "0.0.3",
     "express": "^4.16.2",

@@ -1,6 +1,6 @@
 const path = require('path');
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
-const { Locale } = require('@httpeace_deploy/httpeace-node-core/helpers');
+const { AppStartConfig } = require('hexin-core');
+const { Locale } = require('hexin-core/helpers');
 const PluginManager = require('../app/helpers/PluginManager');
 
 module.exports = class LocaleConfig extends AppStartConfig {

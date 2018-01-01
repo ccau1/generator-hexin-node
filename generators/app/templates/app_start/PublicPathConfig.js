@@ -1,4 +1,4 @@
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
+const { AppStartConfig } = require('hexin-core');
 const express = require('express');
 
 module.exports = class PublicPathConfig extends AppStartConfig {

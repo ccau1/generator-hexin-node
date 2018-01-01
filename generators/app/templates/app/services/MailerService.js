@@ -1,7 +1,7 @@
 'use strict';
 
-const {ServiceCrudBase} = require('@httpeace_deploy/httpeace-node-core');
-const Mailer = require('@httpeace_deploy/httpeace-node-core/helpers/Mailer');
+const {ServiceCrudBase} = require('hexin-core');
+const Mailer = require('hexin-core/helpers/Mailer');
 
 module.exports = class MailerService extends ServiceCrudBase {
   constructor(context_) {

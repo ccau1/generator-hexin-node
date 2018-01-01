@@ -14,7 +14,7 @@ Response - User Email and Token
 ```
 {
     "id": "599fde0eb11467be59511936",
-    "email": "k@httpeace.com",
+    "email": "k@hexin.com",
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjoiNTk5ZmRlMGViMTE0NjdiZTU5NTExOTM2IiwiZXhwIjp7ImV4cGlyZSI6MTUwMzgyMjMwMX0sInR5cGUiOiJtZW1iZXIifQ.OdPB56LlgPdvpSmI-ZxvuVvgz0zJMu2SR2Lgdl1n9cI"
 }
 ```
@@ -22,7 +22,7 @@ Response - User Email and Token
 
 # Postman Example
 
-### Request 
+### Request
 ![](images/authLoginRequest.png?raw=true)
 
 ### Response

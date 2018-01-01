@@ -1,5 +1,5 @@
-const { AppStartConfig } = require('@httpeace_deploy/httpeace-node-core');
-const { Mailer } = require('@httpeace_deploy/httpeace-node-core/helpers');
+const { AppStartConfig } = require('hexin-core');
+const { Mailer } = require('hexin-core/helpers');
 const IamService = require('../app/services/IamService');
 
 module.exports = class MailerConfig extends AppStartConfig {

@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const {ControllerBase} = require('@httpeace_deploy/httpeace-node-core');
+const {ControllerBase} = require('hexin-core');
 
 module.exports = class HomeController extends ControllerBase {
   constructor(app) {

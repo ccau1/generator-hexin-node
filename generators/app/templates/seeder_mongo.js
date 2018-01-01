@@ -1,15 +1,15 @@
 'use strict';
 
-const Seeder = require('@httpeace_deploy/httpeace-node-core/helpers/Seeder');
-const DbConfig = require('@httpeace_deploy/httpeace-node-core/app_start/configs/DbConfig');
-const Database = require('@httpeace_deploy/httpeace-node-core/helpers/Database');
+const Seeder = require('hexin-core/helpers/Seeder');
+const DbConfig = require('hexin-core/app_start/configs/DbConfig');
+const Database = require('hexin-core/helpers/Database');
 
 // configs
 const configs = require('./configs');
 configs.init(process.env.NODE_ENV);
 
 // plugin models
-const Plugin_PageModel = require('@httpeace_deploy/httpeace-plugin-page-node/models/Page');
+const Plugin_PageModel = require('hexin-core-plugins/hexin-plugin-page-node/models/Page');
 
 new Seeder()
 

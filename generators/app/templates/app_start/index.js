@@ -1,6 +1,6 @@
 'use strict';
 
-const {AppStartBase} = require('@httpeace_deploy/httpeace-node-core');
+const {AppStartBase} = require('hexin-core');
 
 const {
   BodyParserConfig: BodyParser,
@@ -9,11 +9,11 @@ const {
   ErrorsConfig: Errors,
   ServerStartConfig: ServerStart,
   RouterConfig: Router
-} = require('@httpeace_deploy/httpeace-node-core/app_start');
+} = require('hexin-core/app_start');
 
-// const {FiveBeans} = require('httpeace-node-core/app_start');
-// const Mailer = require('httpeace-node-core/app_start/configs/MailerConfig');
-// const Redis = require('httpeace-node-core/app_start/configs/RedisConfig');
+// const {FiveBeans} = require('hexin-node-core/app_start');
+// const Mailer = require('hexin-node-core/app_start/configs/MailerConfig');
+// const Redis = require('hexin-node-core/app_start/configs/RedisConfig');
 
 const Auth = require('./AuthConfig');
 const Controllers = require('./ControllersConfig');
@@ -46,9 +46,9 @@ module.exports = class AppStart extends AppStartBase {
     this.handle(new Views(appConfig)); // set hbs views
     this.handle(new PublicPath(appConfig)); // set folder for public (assets)
     this.handle(new UnitOfWork(appConfig));
-    // this.handle(new Mailer(appConfig)); // Access from require('@httpeace_deploy/httpeace-node-core/Mailer').client
-    // this.handle(new FiveBeans(appConfig)); // Access from require('@httpeace_deploy/httpeace-node-core/FiveBeans').client
-    // this.handle(new Redis(appConfig)); // Access from require('@httpeace_deploy/httpeace-node-core/Redis').client
+    // this.handle(new Mailer(appConfig)); // Access from require('hexin-core/Mailer').client
+    // this.handle(new FiveBeans(appConfig)); // Access from require('hexin-core/FiveBeans').client
+    // this.handle(new Redis(appConfig)); // Access from require('hexin-core/Redis').client
     this.handle(new Indicatives(appConfig));
     this.handle(new BodyParser(appConfig));
     this.handle(new Locale(appConfig));

@@ -1,6 +1,6 @@
 'use strict';
 
-const MongoGenericRepository = require('@httpeace_deploy/httpeace-node-core/repos/MongoGenericRepository');
+const MongoGenericRepository = require('hexin-core/repos/MongoGenericRepository');
 
 class IamRepo extends MongoGenericRepository {
   constructor(ctxt) {
